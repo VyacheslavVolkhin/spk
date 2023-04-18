@@ -1,0 +1,270 @@
+:root {
+	--clr-base: #22252A;
+	--clr-base-light: #f9f9f9;
+	--clr-att: #646CF3;
+	--clr-att-hover: #999CF3;
+	--clr-att-second: #A8D657;
+	--clr-light: #e4e4e;
+    --clr-bg: #C2D8E3;
+    --clr-bg-second: #F9FAF9;
+    --clr-bg-light: #E1E8EC;
+
+	--min: 320px;
+	--max: 1440px;
+    
+    --paddingContainer: 25px;
+
+	font-size: 10px;
+}
+.sl-wrap~.sl-wrap {
+	display: none;
+}
+.elm-hidden {
+	display: none;
+}
+.ft {
+    font-family: 'Nunito', sans-serif;
+}
+.fm {
+    font-family: 'Nunito Sans', sans-serif;
+}
+/* ----------------------------------- *\
+			main styles
+\* ----------------------------------- */
+body {
+	color: var(--clr-base);
+	background: var(--clr-bg);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: (24/16);
+}
+p, ul, ol, table, blockquote, .bq-text {
+	position: relative;
+    margin-bottom: (24/16em);
+	img {
+		max-width: 100%;
+	}
+	&:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+ul.ul-list {
+    li {
+        padding-left: 1em;
+        &:before {
+            content: "-";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+li {
+	position: relative;
+}
+ol {
+    counter-reset: li; 
+    list-style: none;
+    li {
+    	position: relative;
+        padding-left: 20px;
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    	&:before {
+    		content: counter(li); 
+			counter-increment: li;
+            font-size: 1em;
+            font-weight: 400;
+            display: inline-block;
+            width: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+    	}
+    }
+}
+a {
+	text-decoration: none;
+	color: var(--clr-att);
+	&:hover {
+		text-decoration: none;
+		color: var(--clr-att);
+	}
+}
+a.link-main, .link-main {
+	text-decoration: none;
+	border-bottom: 1px solid;
+	&:hover {
+		border-bottom: none;
+	}
+}
+.link-phone {
+    white-space: nowrap;
+}
+h1, .h1-title,
+h2, .h2-title,
+h3, .h3-title,
+h4, .h4-title,
+h5, .h5-title,
+h6, .h6-title {
+	display: block;
+	position: relative;
+    font-weight: bold;
+    margin: 1em 0;
+    &:first-child {
+        margin-top: 0;
+}
+}
+.title-lk {
+    padding-left: 45px;
+    display: flex;
+    align-items: center;
+    min-height: 35px;
+    line-height: (20/22);
+    .elm-user {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -17px;
+    }
+} 
+.h1-title, h1 {
+    font-size: (22/16em);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    .ft;
+}
+.h2-title, h2,
+.h3-title, h3 {
+    font-size: (18/16em);
+    line-height: (20/18);
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+}
+.text-att, .title-att {
+    color: var(--clr-att);
+}
+.text-light, .title-light {
+    color: var(--clr-light);
+}
+.text-center, .title-center {
+    text-align: center;
+}
+@media (max-width: 1399px) {
+    :root {
+        font-size: 9.5px;
+    }
+}
+@media (max-width: 1199px) {
+    :root {
+        font-size: 9px;
+    }
+}
+@media (max-width: 1023px) {
+    :root {
+        font-size: 8px;
+    }
+}
+@media (max-width: 767px) {
+    :root {
+        font-size: 7px;
+    }
+}
+@media (min-width: 640px) {
+    .title-lk {
+        padding-left: 60px;
+        min-height: 50px;
+        .elm-user {
+            margin-top: -25px;
+        }
+    }
+}
+@media (min-width: 768px) {
+    :root {
+        --paddingContainer: 17px;
+    }
+    body {
+        font-size: 18px;
+        line-height: (24/18);
+    }
+    p, ul, ol, table, blockquote, .bq-text {
+        margin-bottom: (24/18em);
+    }
+    h1, .h1-title {
+        font-size: (32/18em);
+    }
+    h2, .h2-title,
+    .h3-title, h3 {
+        font-size: (22/18em);
+        line-height: (24/22);
+    }
+    ol {
+        li {
+            padding-left: 24px;
+            margin-bottom: 20px;
+            &:before {
+                font-size: (20/18em);
+            }
+        }
+    }
+}
+@media (min-width: 834px) {
+    :root {
+        --paddingContainer: 49px;
+    }
+}
+@media (min-width: 1024px) {
+    :root {
+        --paddingContainer: 30px;
+    }
+    .title-lk {
+        padding-left: 86px;
+        min-height: 66px;
+        .elm-user {
+            margin-top: -33px;
+        }
+    }
+    .h1-title, h1 {
+        &.title-small {
+            font-size: 30px;
+        }
+    }
+}
+@media (min-width: 1440px) {
+    :root {
+        --paddingContainer: 103px;
+    }
+    body {
+        font-size: 20px;
+        line-height: (24/20);
+    }
+    p, ul, ol, table, blockquote, .bq-text {
+        margin-bottom: (24/20em);
+    }
+    h1, .h1-title {
+        font-size: (38/20em);
+    }
+    h2, .h2-title {
+        font-size: (28/20em);
+        line-height: (32/28);
+    }
+    .h3-title, h3 {
+        font-size: (25/20em);
+        line-height: (32/28);
+    }
+    ol {
+        li {
+            margin-bottom: 4rem;
+            padding-left: (35/20em);
+            &:before {
+                font-size: (24/20em);
+                width: (35/24em);
+            }
+        }
+    }
+}

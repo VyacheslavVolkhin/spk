@@ -1,0 +1,212 @@
+/* ----------------------------------- *\
+			forms elements styles
+\* ----------------------------------- */
+.form-input {
+    height: 37px;
+    border-radius: 19px;
+    border: 1px solid var(--clr-att);
+    background-color: transparent;
+    padding: 0 10px 0 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--clr-base);
+    letter-spacing: 0.02em;
+}
+textarea.form-input {
+    padding-top: 10px;
+    height: 100px;
+}
+select.form-input {
+    display: block;
+    width: 100%;
+    padding-right: 30px;
+    background-image: url(../img/icons/arrow-select.svg);
+    background-position: right 20px center;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none!important;
+    line-height: 1em;
+    text-indent: 0.01px;
+    text-overflow: '';
+    outline: none;
+}
+select::-ms-expand {
+    display: none;
+}
+[placeholder]::-webkit-input-placeholder {color: #A89D9D;}
+[placeholder]:-moz-placeholder {color: #A89D9D;}
+[placeholder]::-moz-placeholder {color: #A89D9D;}
+[placeholder]:-ms-input-placeholder {color: #A89D9D;}
+.btn {
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 22px;
+    font-weight: 400;
+    border: 1px solid var(--clr-att);
+    background: var(--clr-att);
+    font-size: 14px;
+    color: var(--clr-base-light);
+    &:hover {
+        background-color: var(--clr-att-hover);
+        border-color: var(--clr-att-hover);
+        color: var(--clr-base-light);
+    }
+}
+.btn-action-ico {
+	min-width: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 40px;height: 40px;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	transition: all ease 0.2s;
+	flex-shrink: 0;
+    &:not(.btn) {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+	&:before, &:after, [class*="icon-"], img {
+		display: block;
+		position: absolute;
+		top: 0;bottom: 0;left: 0;right: 0;
+		margin: auto;
+		max-width: 100%;
+		max-height: 100%;
+		transition: all ease 0.2s;
+	}
+	&:before, &:after {
+		content: "";
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: auto auto;
+	}
+	&:hover {
+		text-decoration: none;
+		&:not(.btn) {
+            background: none;
+            box-shadow: none;
+        }
+	}
+    &.ico-play {
+        &:before {
+            background-image: url(../img/icons/play.svg);
+            background-size: 100% auto;
+        }
+    }
+    &.ico-menu {
+        width: 30px;
+        height: 30px;
+        &:before {
+            border-radius: 50%;
+            border: 1px solid var(--clr-att);
+            background-image: url(../img/icons/menu-m.svg);
+            background-size: 14px auto;
+        }
+        &:after {
+            background-image: url(../img/icons/close-m.svg);
+            background-size: 30px auto;
+            opacity: 0;
+        }
+        &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+.frm-row,
+.frm-field,
+.frm-row-submit {
+    display: flex;
+    flex-wrap: wrap;
+	position: relative;
+	line-height: 1;
+}
+.frm-field {
+    display: block;
+    width: 100%;
+}
+.frm-select {
+	position: relative;
+	display: block;
+	overflow: hidden;
+    line-height: 1;
+	input {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 0;height: 0;
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+	}
+	label {
+		display: block;
+		position: relative;
+		cursor: pointer;
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+	}
+}
+@media (min-width: 640px) {
+    .form-input {
+        height: 50px;
+        border-radius: 25px;
+        padding-left: 29px;
+        font-size: 18px;
+        line-height: (24/18);
+    }
+}
+@media (min-width: 768px) {
+    .btn {
+        height: 52px;
+        padding: 0 34px;
+        font-size: 20px;
+        border-radius: 26px;
+    }
+    .btn-action-ico {
+        &.ico-menu {
+            width: 60px;
+            height: 60px;
+            &:before {
+                background-image: url(../img/icons/menu.svg);
+                background-size: 30px auto;
+            }
+            &:after {
+                background-image: url(../img/icons/close.svg);
+                background-size: 57px auto;
+            }
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .btn {
+        padding: 0 42px;
+    }
+    .form-input {
+        font-size: 20px;
+        line-height: (24/20);
+    }
+}
